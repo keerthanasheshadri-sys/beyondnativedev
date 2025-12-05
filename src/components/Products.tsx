@@ -1,19 +1,54 @@
-import { Sparkles, Heart, Zap, Shield, Leaf, Sun } from "lucide-react";
+import { useState } from "react";
+import { Sparkles, Heart, Zap, Shield, Leaf, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import productMoringa from "@/assets/product-moringa.jpg";
 import productTurmeric from "@/assets/product-turmeric.jpg";
 import productArrowroot from "@/assets/product-arrowroot.jpg";
 import productPepper from "@/assets/product-pepper.jpg";
 import productGinger from "@/assets/product-ginger.jpg";
 import productAshwagandha from "@/assets/product-ashwagandha.jpg";
+import productMockup from "@/assets/product-mockup.jpg";
 
-const products = [
+interface SKU {
+  id: string;
+  name: string;
+  weight: string;
+  packaging: string;
+  minOrder: string;
+}
+
+interface Product {
+  name: string;
+  description: string;
+  image: string;
+  benefits: string[];
+  icon: React.ComponentType<{ className?: string }>;
+  origin: string;
+  shelfLife: string;
+  skus: SKU[];
+}
+
+const products: Product[] = [
   {
     name: "Moringa Powder",
     description: "Nutrient-rich superfood packed with vitamins, minerals, and antioxidants. Perfect for health-conscious consumers.",
     image: productMoringa,
     benefits: ["Rich in Antioxidants", "High Protein Content", "Anti-inflammatory"],
     icon: Leaf,
+    origin: "Tamil Nadu, India",
+    shelfLife: "24 months",
+    skus: [
+      { id: "MOR-100", name: "Moringa Powder - Retail Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "500 units" },
+      { id: "MOR-250", name: "Moringa Powder - Family Pack", weight: "250g", packaging: "Stand-up Pouch", minOrder: "300 units" },
+      { id: "MOR-500", name: "Moringa Powder - Value Pack", weight: "500g", packaging: "Glass Jar", minOrder: "200 units" },
+      { id: "MOR-BULK", name: "Moringa Powder - Bulk", weight: "25kg", packaging: "Food-grade Drum", minOrder: "10 units" },
+    ],
   },
   {
     name: "Turmeric Powder",
@@ -21,6 +56,14 @@ const products = [
     image: productTurmeric,
     benefits: ["Natural Anti-inflammatory", "Immune Booster", "High Curcumin"],
     icon: Sun,
+    origin: "Erode, Tamil Nadu",
+    shelfLife: "24 months",
+    skus: [
+      { id: "TUR-100", name: "Turmeric Powder - Retail Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "500 units" },
+      { id: "TUR-250", name: "Turmeric Powder - Family Pack", weight: "250g", packaging: "Stand-up Pouch", minOrder: "300 units" },
+      { id: "TUR-500", name: "Turmeric Powder - Premium Jar", weight: "500g", packaging: "Glass Jar", minOrder: "200 units" },
+      { id: "TUR-BULK", name: "Turmeric Powder - Bulk", weight: "25kg", packaging: "Food-grade Drum", minOrder: "10 units" },
+    ],
   },
   {
     name: "Arrowroot Powder",
@@ -28,6 +71,14 @@ const products = [
     image: productArrowroot,
     benefits: ["Gluten-Free", "Easy to Digest", "Versatile Use"],
     icon: Sparkles,
+    origin: "Kerala, India",
+    shelfLife: "18 months",
+    skus: [
+      { id: "ARR-100", name: "Arrowroot Powder - Retail Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "500 units" },
+      { id: "ARR-250", name: "Arrowroot Powder - Family Pack", weight: "250g", packaging: "Stand-up Pouch", minOrder: "300 units" },
+      { id: "ARR-500", name: "Arrowroot Powder - Bulk Pack", weight: "500g", packaging: "Kraft Paper Bag", minOrder: "200 units" },
+      { id: "ARR-BULK", name: "Arrowroot Powder - Bulk", weight: "20kg", packaging: "Food-grade Drum", minOrder: "15 units" },
+    ],
   },
   {
     name: "Black Pepper",
@@ -35,6 +86,14 @@ const products = [
     image: productPepper,
     benefits: ["Enhances Absorption", "Rich Flavor", "Antioxidant Properties"],
     icon: Zap,
+    origin: "Wayanad, Kerala",
+    shelfLife: "36 months",
+    skus: [
+      { id: "PEP-50", name: "Black Pepper - Retail Pack", weight: "50g", packaging: "Glass Jar", minOrder: "500 units" },
+      { id: "PEP-100", name: "Black Pepper - Family Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "400 units" },
+      { id: "PEP-250", name: "Black Pepper - Premium Jar", weight: "250g", packaging: "Glass Jar", minOrder: "200 units" },
+      { id: "PEP-BULK", name: "Black Pepper - Bulk", weight: "25kg", packaging: "Jute Bag", minOrder: "20 units" },
+    ],
   },
   {
     name: "Ginger Powder",
@@ -42,6 +101,14 @@ const products = [
     image: productGinger,
     benefits: ["Digestive Aid", "Anti-nausea", "Warming Properties"],
     icon: Heart,
+    origin: "Assam, India",
+    shelfLife: "18 months",
+    skus: [
+      { id: "GIN-100", name: "Ginger Powder - Retail Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "500 units" },
+      { id: "GIN-250", name: "Ginger Powder - Family Pack", weight: "250g", packaging: "Stand-up Pouch", minOrder: "300 units" },
+      { id: "GIN-500", name: "Ginger Powder - Value Pack", weight: "500g", packaging: "Glass Jar", minOrder: "200 units" },
+      { id: "GIN-BULK", name: "Ginger Powder - Bulk", weight: "20kg", packaging: "Food-grade Drum", minOrder: "10 units" },
+    ],
   },
   {
     name: "Ashwagandha",
@@ -49,10 +116,20 @@ const products = [
     image: productAshwagandha,
     benefits: ["Stress Relief", "Energy Boost", "Adaptogenic"],
     icon: Shield,
+    origin: "Madhya Pradesh, India",
+    shelfLife: "24 months",
+    skus: [
+      { id: "ASH-100", name: "Ashwagandha Powder - Retail Pack", weight: "100g", packaging: "Stand-up Pouch", minOrder: "500 units" },
+      { id: "ASH-250", name: "Ashwagandha Powder - Family Pack", weight: "250g", packaging: "Stand-up Pouch", minOrder: "300 units" },
+      { id: "ASH-500", name: "Ashwagandha Powder - Premium Jar", weight: "500g", packaging: "Glass Jar", minOrder: "150 units" },
+      { id: "ASH-BULK", name: "Ashwagandha Powder - Bulk", weight: "25kg", packaging: "Food-grade Drum", minOrder: "10 units" },
+    ],
   },
 ];
 
 const Products = () => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
   return (
     <section id="products" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -111,7 +188,11 @@ const Products = () => {
                   ))}
                 </div>
 
-                <Button variant="outline" className="w-full group/btn">
+                <Button 
+                  variant="outline" 
+                  className="w-full group/btn"
+                  onClick={() => setSelectedProduct(product)}
+                >
                   Learn More
                   <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                 </Button>
@@ -120,6 +201,94 @@ const Products = () => {
           ))}
         </div>
       </div>
+
+      {/* Product Detail Modal */}
+      <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedProduct && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-serif text-3xl text-foreground">
+                  {selectedProduct.name}
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="grid md:grid-cols-2 gap-8 mt-4">
+                {/* Product Image & Info */}
+                <div>
+                  <img
+                    src={productMockup}
+                    alt={`${selectedProduct.name} packaging`}
+                    className="w-full rounded-xl mb-4"
+                  />
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Origin:</span>
+                      <span className="font-medium text-foreground">{selectedProduct.origin}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Shelf Life:</span>
+                      <span className="font-medium text-foreground">{selectedProduct.shelfLife}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4">
+                    <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProduct.benefits.map((benefit) => (
+                        <span
+                          key={benefit}
+                          className="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full"
+                        >
+                          {benefit}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* SKUs */}
+                <div>
+                  <h4 className="font-semibold text-foreground mb-4">Available SKUs</h4>
+                  <div className="space-y-3">
+                    {selectedProduct.skus.map((sku) => (
+                      <div
+                        key={sku.id}
+                        className="bg-secondary/50 rounded-xl p-4 border border-border/50"
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="font-medium text-foreground">{sku.name}</h5>
+                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                            {sku.id}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2 text-sm">
+                          <div>
+                            <span className="text-muted-foreground block">Weight</span>
+                            <span className="font-medium text-foreground">{sku.weight}</span>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground block">Packaging</span>
+                            <span className="font-medium text-foreground">{sku.packaging}</span>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground block">Min. Order</span>
+                            <span className="font-medium text-foreground">{sku.minOrder}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button className="w-full mt-6" variant="accent">
+                    Request Quote
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

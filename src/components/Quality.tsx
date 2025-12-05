@@ -62,17 +62,13 @@ const Quality = () => {
               <div key={item.title} className="relative">
                 {/* Connector Line (hidden on mobile and last item) */}
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary-foreground/20" />
+                  <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-primary-foreground/20" />
                 )}
                 
                 <div className="relative z-10 text-center">
-                  {/* Step Number */}
-                  <div className="bg-accent text-accent-foreground w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl shadow-elevated">
-                    {item.step}
-                  </div>
-                  
-                  <div className="bg-primary-foreground/10 rounded-full p-3 w-12 h-12 mx-auto mb-4 flex items-center justify-center">
-                    <item.icon className="h-6 w-6" />
+                  {/* Icon with accent background */}
+                  <div className="bg-accent text-accent-foreground w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-elevated">
+                    <item.icon className="h-10 w-10" />
                   </div>
                   
                   <h4 className="font-semibold text-lg mb-2">{item.title}</h4>

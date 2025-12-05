@@ -4,7 +4,7 @@ const values = [
   {
     icon: Users,
     title: "Dignity for Farmers",
-    description: "We believe farmers should thrive, not just survive. Building long-term relationships that honor their work.",
+    description: "Building long-term relationships that honor their work and ensure fair compensation.",
   },
   {
     icon: Handshake,
@@ -37,15 +37,14 @@ const About = () => {
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
                 We're a group of tech minds, logistics experts, and everyday dreamers who believe 
-                India's richest treasures aren't just found in markets—they're grown in our soil.
+                India's richest treasures aren't just found in markets, they're grown in our soil.
               </p>
               <p>
-                Our journey began with a simple idea: farmers should thrive, not just survive, 
-                and the world deserves to experience the purity, flavour, and strength of India's 
-                organic heritage.
+                Our journey began with a simple idea: farmers should thrive and the world deserves 
+                to experience the purity, flavour, and strength of India's organic heritage.
               </p>
               <p>
-                We blend innovation with intention—using technology to open global doors, and using 
+                We blend innovation with intention using technology to open global doors, and using 
                 heart to build long-term relationships with the farmers who make it all possible.
               </p>
               <p>

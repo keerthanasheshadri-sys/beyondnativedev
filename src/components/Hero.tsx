@@ -15,7 +15,7 @@ const Hero = () => {
           alt="Organic farm fields"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/70 to-forest/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest/60 via-forest/40 to-forest/70" />
       </div>
 
       {/* Content */}
@@ -30,9 +30,9 @@ const Hero = () => {
 
         {/* Heading */}
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          Nature's Finest,
+          India's Goodness,
           <br />
-          <span className="text-accent">Delivered Globally</span>
+          <span className="text-accent">Shared With the World</span>
         </h1>
 
         {/* Subtitle */}

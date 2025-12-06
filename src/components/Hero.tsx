@@ -15,7 +15,7 @@ const Hero = () => {
           alt="Organic farm fields"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/60 via-forest/40 to-forest/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest/85 via-forest/75 to-forest/90" />
       </div>
 
       {/* Content */}

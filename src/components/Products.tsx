@@ -217,7 +217,7 @@ const Products = () => {
                 {/* Product Image & Info */}
                 <div>
                   <img
-                    src={productMockup}
+                    src={selectedProduct.image}
                     alt={`${selectedProduct.name} packaging`}
                     className="w-full rounded-xl mb-4"
                   />

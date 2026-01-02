@@ -52,7 +52,7 @@ const products: Product[] = [
       { title: "Anti-inflammatory Properties", description: "Contains isothiocyanates that help reduce inflammation in the body, supporting joint health and overall wellness." },
       { title: "Boosts Energy & Stamina", description: "High iron content helps combat fatigue and improve oxygen transport throughout the body for sustained energy." },
     ],
-    youtubeVideoId: "ViRfLvxdJFg",
+    youtubeVideoId: "n0SLWX31U7k",
     icon: Leaf,
     origin: "Tamil Nadu, India",
     shelfLife: "24 months",

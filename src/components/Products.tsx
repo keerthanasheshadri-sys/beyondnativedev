@@ -28,6 +28,11 @@ interface Product {
   description: string;
   image: string;
   benefits: string[];
+  healthBenefits: {
+    title: string;
+    description: string;
+  }[];
+  youtubeVideoId: string;
   icon: React.ComponentType<{ className?: string }>;
   origin: string;
   shelfLife: string;
@@ -40,6 +45,14 @@ const products: Product[] = [
     description: "Nutrient-rich superfood packed with vitamins, minerals, and antioxidants. Perfect for health-conscious consumers.",
     image: productMoringa,
     benefits: ["Rich in Antioxidants", "High Protein Content", "Anti-inflammatory"],
+    healthBenefits: [
+      { title: "Nutrient Powerhouse", description: "Contains 7x more Vitamin C than oranges, 4x more calcium than milk, 4x more Vitamin A than carrots, and 3x more potassium than bananas." },
+      { title: "Powerful Antioxidant Protection", description: "Rich in quercetin, chlorogenic acid, and beta-carotene which help combat oxidative stress and protect cells from damage." },
+      { title: "Supports Blood Sugar Balance", description: "Studies show moringa may help reduce blood sugar levels and improve insulin sensitivity in diabetic individuals." },
+      { title: "Anti-inflammatory Properties", description: "Contains isothiocyanates that help reduce inflammation in the body, supporting joint health and overall wellness." },
+      { title: "Boosts Energy & Stamina", description: "High iron content helps combat fatigue and improve oxygen transport throughout the body for sustained energy." },
+    ],
+    youtubeVideoId: "ViRfLvxdJFg",
     icon: Leaf,
     origin: "Tamil Nadu, India",
     shelfLife: "24 months",
@@ -55,6 +68,14 @@ const products: Product[] = [
     description: "Premium golden turmeric with high curcumin content. Sourced from organic farms for maximum potency.",
     image: productTurmeric,
     benefits: ["Natural Anti-inflammatory", "Immune Booster", "High Curcumin"],
+    healthBenefits: [
+      { title: "Powerful Anti-inflammatory", description: "Curcumin is one of nature's most potent anti-inflammatory compounds, matching the effectiveness of some pharmaceutical drugs without side effects." },
+      { title: "Brain Health Support", description: "Increases Brain-Derived Neurotrophic Factor (BDNF), supporting cognitive function and potentially delaying age-related brain diseases." },
+      { title: "Heart Disease Prevention", description: "Improves endothelial function, helping regulate blood pressure, blood clotting, and various cardiovascular factors." },
+      { title: "Natural Pain Relief", description: "Clinical studies show turmeric can be as effective as ibuprofen for reducing joint pain and arthritis symptoms." },
+      { title: "Immune System Boost", description: "Powerful antimicrobial and antiviral properties help strengthen the body's natural defense mechanisms." },
+    ],
+    youtubeVideoId: "s8XD0ydXlZE",
     icon: Sun,
     origin: "Erode, Tamil Nadu",
     shelfLife: "24 months",
@@ -70,6 +91,14 @@ const products: Product[] = [
     description: "Pure white arrowroot starch, ideal for gluten-free cooking and as a natural thickening agent.",
     image: productArrowroot,
     benefits: ["Gluten-Free", "Easy to Digest", "Versatile Use"],
+    healthBenefits: [
+      { title: "Gentle on Digestion", description: "Easily digestible starch that soothes the digestive tract, making it ideal for those with sensitive stomachs or recovering from illness." },
+      { title: "Gluten-Free Alternative", description: "Perfect substitute for wheat flour in baking and cooking for those with celiac disease or gluten sensitivity." },
+      { title: "Supports Metabolism", description: "Contains B-vitamins including folate, which plays a crucial role in energy metabolism and cell function." },
+      { title: "Heart-Healthy", description: "Good source of potassium which helps maintain healthy blood pressure levels and supports cardiovascular function." },
+      { title: "Natural Skin Soother", description: "Traditionally used in skincare to absorb moisture and soothe irritated skin, rashes, and minor wounds." },
+    ],
+    youtubeVideoId: "cjXEGEn7pxk",
     icon: Sparkles,
     origin: "Kerala, India",
     shelfLife: "18 months",
@@ -85,6 +114,14 @@ const products: Product[] = [
     description: "Premium quality black peppercorns, hand-picked and sun-dried for maximum flavor and aroma.",
     image: productPepper,
     benefits: ["Enhances Absorption", "Rich Flavor", "Antioxidant Properties"],
+    healthBenefits: [
+      { title: "Enhances Nutrient Absorption", description: "Piperine increases absorption of curcumin by up to 2000% and improves bioavailability of many other nutrients and supplements." },
+      { title: "Digestive Health", description: "Stimulates digestive enzymes and increases hydrochloric acid secretion, improving digestion and reducing bloating." },
+      { title: "Metabolism Booster", description: "Thermogenic properties help increase metabolic rate and support healthy weight management when combined with balanced diet." },
+      { title: "Respiratory Support", description: "Traditional remedy for coughs and colds, helping to loosen phlegm and provide relief from congestion." },
+      { title: "Antioxidant Protection", description: "Contains piperine and other compounds that neutralize free radicals and protect against cellular damage." },
+    ],
+    youtubeVideoId: "mG3EtN7PflY",
     icon: Zap,
     origin: "Wayanad, Kerala",
     shelfLife: "36 months",
@@ -100,6 +137,14 @@ const products: Product[] = [
     description: "Aromatic ginger with intense flavor, perfect for culinary and wellness applications.",
     image: productGinger,
     benefits: ["Digestive Aid", "Anti-nausea", "Warming Properties"],
+    healthBenefits: [
+      { title: "Natural Nausea Relief", description: "Highly effective against morning sickness, motion sickness, and chemotherapy-induced nausea, backed by numerous clinical studies." },
+      { title: "Reduces Muscle Pain", description: "Regular consumption can reduce exercise-induced muscle soreness and pain by up to 25% due to anti-inflammatory gingerols." },
+      { title: "Lowers Blood Sugar", description: "Studies show ginger can significantly reduce fasting blood sugar levels and improve long-term blood sugar markers." },
+      { title: "Supports Digestive Health", description: "Accelerates gastric emptying, reducing indigestion and bloating while stimulating saliva and bile production." },
+      { title: "Cold & Flu Fighter", description: "Warming properties and antimicrobial compounds help fight infections and provide relief from respiratory symptoms." },
+    ],
+    youtubeVideoId: "7NzLaO2MJQo",
     icon: Heart,
     origin: "Assam, India",
     shelfLife: "18 months",
@@ -115,6 +160,14 @@ const products: Product[] = [
     description: "Ancient Ayurvedic adaptogen root, known for stress relief and vitality enhancement.",
     image: productAshwagandha,
     benefits: ["Stress Relief", "Energy Boost", "Adaptogenic"],
+    healthBenefits: [
+      { title: "Stress & Anxiety Reduction", description: "Clinically proven to reduce cortisol levels by up to 30%, significantly decreasing stress and anxiety symptoms." },
+      { title: "Improves Sleep Quality", description: "Contains triethylene glycol which promotes deeper, more restful sleep and helps those struggling with insomnia." },
+      { title: "Boosts Testosterone & Fertility", description: "Studies show significant increases in testosterone, sperm count, and sperm motility in men taking ashwagandha." },
+      { title: "Enhances Athletic Performance", description: "Improves VO2 max, strength, and recovery time in athletes, making it popular among fitness enthusiasts." },
+      { title: "Cognitive Function Support", description: "Protects nerve cells and may improve memory, reaction time, and ability to perform tasks in healthy adults." },
+    ],
+    youtubeVideoId: "qHNCTB7sDYs",
     icon: Shield,
     origin: "Madhya Pradesh, India",
     shelfLife: "24 months",
@@ -204,24 +257,25 @@ const Products = () => {
 
       {/* Product Detail Modal */}
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
           {selectedProduct && (
             <>
               <DialogHeader>
                 <DialogTitle className="font-serif text-3xl text-foreground">
                   {selectedProduct.name}
                 </DialogTitle>
+                <p className="text-muted-foreground mt-2">{selectedProduct.description}</p>
               </DialogHeader>
               
-              <div className="grid md:grid-cols-2 gap-8 mt-4">
-                {/* Product Image & Info */}
+              {/* Product Image & Basic Info */}
+              <div className="grid md:grid-cols-2 gap-8 mt-6">
                 <div>
                   <img
                     src={selectedProduct.image}
                     alt={`${selectedProduct.name} packaging`}
                     className="w-full rounded-xl mb-4"
                   />
-                  <div className="space-y-3">
+                  <div className="space-y-3 bg-secondary/30 rounded-xl p-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Origin:</span>
                       <span className="font-medium text-foreground">{selectedProduct.origin}</span>
@@ -247,43 +301,91 @@ const Products = () => {
                   </div>
                 </div>
 
-                {/* SKUs */}
+                {/* YouTube Video */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-4">Available SKUs</h4>
-                  <div className="space-y-3">
-                    {selectedProduct.skus.map((sku) => (
-                      <div
-                        key={sku.id}
-                        className="bg-secondary/50 rounded-xl p-4 border border-border/50"
-                      >
-                        <div className="flex justify-between items-start mb-2">
-                          <h5 className="font-medium text-foreground">{sku.name}</h5>
-                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                            {sku.id}
-                          </span>
+                  <h4 className="font-semibold text-foreground mb-4">Learn More About {selectedProduct.name}</h4>
+                  <div className="aspect-video rounded-xl overflow-hidden bg-secondary/50">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${selectedProduct.youtubeVideoId}`}
+                      title={`${selectedProduct.name} video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Detailed Health Benefits */}
+              <div className="mt-8">
+                <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
+                  Health Benefits of {selectedProduct.name}
+                </h4>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {selectedProduct.healthBenefits.map((benefit, index) => (
+                    <div 
+                      key={index}
+                      className="bg-gradient-to-br from-secondary/50 to-secondary/20 rounded-xl p-4 border border-border/30"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="bg-primary/10 rounded-full p-2 mt-0.5">
+                          <Heart className="h-4 w-4 text-primary" />
                         </div>
-                        <div className="grid grid-cols-3 gap-2 text-sm">
-                          <div>
-                            <span className="text-muted-foreground block">Weight</span>
-                            <span className="font-medium text-foreground">{sku.weight}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground block">Packaging</span>
-                            <span className="font-medium text-foreground">{sku.packaging}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground block">Min. Order</span>
-                            <span className="font-medium text-foreground">{sku.minOrder}</span>
-                          </div>
+                        <div>
+                          <h5 className="font-medium text-foreground mb-1">{benefit.title}</h5>
+                          <p className="text-sm text-muted-foreground">{benefit.description}</p>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="w-full mt-6" variant="accent">
-                    Request Quote
-                  </Button>
+                    </div>
+                  ))}
                 </div>
+              </div>
+
+              {/* SKUs Section */}
+              <div className="mt-8">
+                <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
+                  Available SKUs for Export
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {selectedProduct.skus.map((sku) => (
+                    <div
+                      key={sku.id}
+                      className="bg-secondary/50 rounded-xl p-4 border border-border/50"
+                    >
+                      <div className="flex justify-between items-start mb-3">
+                        <h5 className="font-medium text-foreground">{sku.name}</h5>
+                        <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded font-mono">
+                          {sku.id}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div>
+                          <span className="text-muted-foreground block text-xs">Weight Options</span>
+                          <span className="font-medium text-foreground">{sku.weight}</span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground block text-xs">Packaging</span>
+                          <span className="font-medium text-foreground">{sku.packaging}</span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground block text-xs">Min. Order</span>
+                          <span className="font-medium text-foreground">{sku.minOrder}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <Button 
+                  className="w-full mt-6" 
+                  variant="accent"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Request Quote for {selectedProduct.name}
+                </Button>
               </div>
             </>
           )}

@@ -301,46 +301,48 @@ const Products = () => {
                   </div>
                 </div>
 
-                {/* YouTube Video */}
+                {/* Detailed Health Benefits */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-4">Learn More About {selectedProduct.name}</h4>
-                  <div className="aspect-video rounded-xl overflow-hidden bg-secondary/50">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={`https://www.youtube.com/embed/${selectedProduct.youtubeVideoId}`}
-                      title={`${selectedProduct.name} video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
+                  <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
+                    Health Benefits of {selectedProduct.name}
+                  </h4>
+                  <div className="space-y-3">
+                    {selectedProduct.healthBenefits.map((benefit, index) => (
+                      <div 
+                        key={index}
+                        className="bg-gradient-to-br from-secondary/50 to-secondary/20 rounded-xl p-4 border border-border/30"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="bg-primary/10 rounded-full p-2 mt-0.5">
+                            <Heart className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h5 className="font-medium text-foreground mb-1">{benefit.title}</h5>
+                            <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* Detailed Health Benefits */}
+              {/* YouTube Video Section */}
               <div className="mt-8">
                 <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
-                  Health Benefits of {selectedProduct.name}
+                  Learn More About {selectedProduct.name}
                 </h4>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {selectedProduct.healthBenefits.map((benefit, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-secondary/50 to-secondary/20 rounded-xl p-4 border border-border/30"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="bg-primary/10 rounded-full p-2 mt-0.5">
-                          <Heart className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <h5 className="font-medium text-foreground mb-1">{benefit.title}</h5>
-                          <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                <div className="aspect-video rounded-xl overflow-hidden bg-secondary/50">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube-nocookie.com/embed/${selectedProduct.youtubeVideoId}?rel=0&modestbranding=1`}
+                    title={`${selectedProduct.name} video`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
 

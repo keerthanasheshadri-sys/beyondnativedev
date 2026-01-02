@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sparkles, Heart, Zap, Shield, Leaf, Sun, X } from "lucide-react";
+import { Heart, Zap, Leaf, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,10 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import productMoringa from "@/assets/product-moringa.jpg";
 import productTurmeric from "@/assets/product-turmeric.jpg";
-import productArrowroot from "@/assets/product-arrowroot.jpg";
 import productPepper from "@/assets/product-pepper.jpg";
 import productGinger from "@/assets/product-ginger.jpg";
-import productAshwagandha from "@/assets/product-ashwagandha.jpg";
 import productMockup from "@/assets/product-mockup.jpg";
 
 interface SKU {
@@ -75,7 +73,7 @@ const products: Product[] = [
       { title: "Natural Pain Relief", description: "Clinical studies show turmeric can be as effective as ibuprofen for reducing joint pain and arthritis symptoms." },
       { title: "Immune System Boost", description: "Powerful antimicrobial and antiviral properties help strengthen the body's natural defense mechanisms." },
     ],
-    youtubeVideoId: "s8XD0ydXlZE",
+    youtubeVideoId: "n0SLWX31U7k",
     icon: Sun,
     origin: "Erode, Tamil Nadu",
     shelfLife: "24 months",
@@ -84,29 +82,6 @@ const products: Product[] = [
       { id: "TUR-PWD", name: "Turmeric Powder", weight: "100g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
       { id: "TUR-SL", name: "Turmeric Slices", weight: "500g / 1kg / 5kg", packaging: "PP Bag / Carton", minOrder: "25 kg" },
       { id: "TUR-CUR", name: "Curcumin Extract (95%)", weight: "100g / 500g / 1kg", packaging: "Aluminium Container", minOrder: "10 kg" },
-    ],
-  },
-  {
-    name: "Arrowroot",
-    description: "Pure white arrowroot starch, ideal for gluten-free cooking and as a natural thickening agent.",
-    image: productArrowroot,
-    benefits: ["Gluten-Free", "Easy to Digest", "Versatile Use"],
-    healthBenefits: [
-      { title: "Gentle on Digestion", description: "Easily digestible starch that soothes the digestive tract, making it ideal for those with sensitive stomachs or recovering from illness." },
-      { title: "Gluten-Free Alternative", description: "Perfect substitute for wheat flour in baking and cooking for those with celiac disease or gluten sensitivity." },
-      { title: "Supports Metabolism", description: "Contains B-vitamins including folate, which plays a crucial role in energy metabolism and cell function." },
-      { title: "Heart-Healthy", description: "Good source of potassium which helps maintain healthy blood pressure levels and supports cardiovascular function." },
-      { title: "Natural Skin Soother", description: "Traditionally used in skincare to absorb moisture and soothe irritated skin, rashes, and minor wounds." },
-    ],
-    youtubeVideoId: "cjXEGEn7pxk",
-    icon: Sparkles,
-    origin: "Kerala, India",
-    shelfLife: "18 months",
-    skus: [
-      { id: "ARR-PWD", name: "Arrowroot Powder", weight: "100g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
-      { id: "ARR-STR", name: "Arrowroot Starch (Industrial)", weight: "25kg / 50kg", packaging: "HDPE Drum / Bag", minOrder: "500 kg" },
-      { id: "ARR-FLR", name: "Arrowroot Flour (Fine)", weight: "500g / 1kg / 5kg", packaging: "Kraft Bag / Pouch", minOrder: "25 kg" },
-      { id: "ARR-CHP", name: "Arrowroot Chips (Dried)", weight: "250g / 500g / 1kg", packaging: "PP Bag", minOrder: "50 kg" },
     ],
   },
   {
@@ -153,29 +128,6 @@ const products: Product[] = [
       { id: "GIN-PWD", name: "Ginger Powder", weight: "100g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
       { id: "GIN-FLK", name: "Ginger Flakes (Dehydrated)", weight: "250g / 500g / 1kg", packaging: "PP Bag / Carton", minOrder: "25 kg" },
       { id: "GIN-OIL", name: "Ginger Oil (Steam Distilled)", weight: "50ml / 100ml / 500ml / 1L", packaging: "Glass / Aluminium", minOrder: "5 L" },
-    ],
-  },
-  {
-    name: "Ashwagandha",
-    description: "Ancient Ayurvedic adaptogen root, known for stress relief and vitality enhancement.",
-    image: productAshwagandha,
-    benefits: ["Stress Relief", "Energy Boost", "Adaptogenic"],
-    healthBenefits: [
-      { title: "Stress & Anxiety Reduction", description: "Clinically proven to reduce cortisol levels by up to 30%, significantly decreasing stress and anxiety symptoms." },
-      { title: "Improves Sleep Quality", description: "Contains triethylene glycol which promotes deeper, more restful sleep and helps those struggling with insomnia." },
-      { title: "Boosts Testosterone & Fertility", description: "Studies show significant increases in testosterone, sperm count, and sperm motility in men taking ashwagandha." },
-      { title: "Enhances Athletic Performance", description: "Improves VO2 max, strength, and recovery time in athletes, making it popular among fitness enthusiasts." },
-      { title: "Cognitive Function Support", description: "Protects nerve cells and may improve memory, reaction time, and ability to perform tasks in healthy adults." },
-    ],
-    youtubeVideoId: "qHNCTB7sDYs",
-    icon: Shield,
-    origin: "Madhya Pradesh, India",
-    shelfLife: "24 months",
-    skus: [
-      { id: "ASH-RT", name: "Ashwagandha Root Whole", weight: "500g / 1kg / 5kg / 25kg", packaging: "PP Bag / Carton", minOrder: "50 kg" },
-      { id: "ASH-PWD", name: "Ashwagandha Root Powder", weight: "100g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
-      { id: "ASH-EXT", name: "Ashwagandha Extract (5% Withanolides)", weight: "100g / 500g / 1kg", packaging: "Aluminium Container", minOrder: "10 kg" },
-      { id: "ASH-TAB", name: "Ashwagandha Tablets (500mg)", weight: "60 / 120 / 500 tabs", packaging: "HDPE Bottle", minOrder: "5000 tabs" },
     ],
   },
 ];

@@ -1,5 +1,10 @@
-import { Leaf, Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Leaf, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
+
+const socialLinks = [
+  { Icon: Instagram, href: "https://www.instagram.com/beyondnative.in/" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/110930944/" },
+];
 
 const Footer = () => {
   return (
@@ -23,10 +28,12 @@ const Footer = () => {
               dignity for farmers, and transparency in trade.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Linkedin, Twitter].map((Icon, index) => (
+              {socialLinks.map(({ Icon, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-primary-foreground/10 hover:bg-accent p-2 rounded-lg transition-colors"
                 >
                   <Icon className="h-5 w-5" />
@@ -61,12 +68,6 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <a href="mailto:hello@beyondnative.in" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   hello@beyondnative.in
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <a href="tel:+919876543210" className="text-primary-foreground/70 hover:text-accent transition-colors">
-                  +91 98765 43210
                 </a>
               </li>
               <li className="flex items-start gap-3">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, Zap, Leaf, Sun } from "lucide-react";
+import { Heart, Zap, Leaf, Sun, Droplet, Cookie } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -128,6 +128,52 @@ const products: Product[] = [
       { id: "GIN-PWD", name: "Ginger Powder", weight: "100g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
       { id: "GIN-FLK", name: "Ginger Flakes (Dehydrated)", weight: "250g / 500g / 1kg", packaging: "PP Bag / Carton", minOrder: "25 kg" },
       { id: "GIN-OIL", name: "Ginger Oil (Steam Distilled)", weight: "50ml / 100ml / 500ml / 1L", packaging: "Glass / Aluminium", minOrder: "5 L" },
+    ],
+  },
+  {
+    name: "Honey",
+    description: "Pure, raw honey sourced from wild forests and organic farms. Rich in enzymes, antioxidants, and natural sweetness.",
+    image: productMockup,
+    benefits: ["Natural Sweetener", "Rich in Antioxidants", "Antibacterial"],
+    healthBenefits: [
+      { title: "Natural Energy Source", description: "Provides quick, natural energy through easily digestible natural sugars like fructose and glucose without causing sugar spikes." },
+      { title: "Powerful Antibacterial Properties", description: "Contains hydrogen peroxide and other compounds that make it effective against bacteria, supporting wound healing and immune health." },
+      { title: "Rich in Antioxidants", description: "Packed with phenolic compounds and flavonoids that help protect cells from oxidative damage and reduce inflammation." },
+      { title: "Soothes Coughs & Sore Throat", description: "Clinically proven to be as effective as some cough medicines, coating the throat and providing natural relief." },
+      { title: "Supports Digestive Health", description: "Prebiotic properties feed beneficial gut bacteria, supporting a healthy digestive system and immune function." },
+    ],
+    youtubeVideoId: "n0SLWX31U7k",
+    icon: Droplet,
+    origin: "Various Regions, India",
+    shelfLife: "24 months",
+    skus: [
+      { id: "HON-RAW", name: "Raw Forest Honey", weight: "250g / 500g / 1kg / 5kg", packaging: "Glass Jar / HDPE Drum", minOrder: "100 kg" },
+      { id: "HON-MUL", name: "Multiflora Honey", weight: "250g / 500g / 1kg / 25kg", packaging: "Glass Jar / Drum", minOrder: "50 kg" },
+      { id: "HON-ORG", name: "Organic Certified Honey", weight: "250g / 500g / 1kg", packaging: "Glass Jar / Pouch", minOrder: "50 kg" },
+      { id: "HON-BLK", name: "Bulk Raw Honey", weight: "25kg / 50kg / 300kg", packaging: "HDPE Drum / IBC", minOrder: "300 kg" },
+    ],
+  },
+  {
+    name: "Jaggery",
+    description: "Traditional unrefined cane sugar, rich in minerals and natural sweetness. A healthier alternative to refined sugar.",
+    image: productMockup,
+    benefits: ["Mineral Rich", "Natural Sweetener", "Detoxifying"],
+    healthBenefits: [
+      { title: "Rich in Essential Minerals", description: "Contains iron, magnesium, potassium, and phosphorus that are stripped away in refined sugar production." },
+      { title: "Natural Blood Purifier", description: "Traditionally used in Ayurveda for its blood-cleansing properties, helping to remove toxins from the body." },
+      { title: "Supports Digestive Health", description: "Stimulates digestive enzymes and helps in proper bowel movements, traditionally consumed after meals in India." },
+      { title: "Boosts Immunity", description: "Rich in antioxidants and minerals like zinc and selenium that strengthen the immune system." },
+      { title: "Provides Sustained Energy", description: "Complex carbohydrates are digested slowly, providing sustained energy without the crash associated with refined sugar." },
+    ],
+    youtubeVideoId: "n0SLWX31U7k",
+    icon: Cookie,
+    origin: "Maharashtra & Tamil Nadu, India",
+    shelfLife: "12 months",
+    skus: [
+      { id: "JAG-BLK", name: "Jaggery Blocks", weight: "500g / 1kg / 5kg / 25kg", packaging: "Paper Wrap / Carton", minOrder: "100 kg" },
+      { id: "JAG-PWD", name: "Jaggery Powder", weight: "250g / 500g / 1kg / 25kg", packaging: "Pouch / Drum", minOrder: "50 kg" },
+      { id: "JAG-CUB", name: "Jaggery Cubes", weight: "250g / 500g / 1kg", packaging: "Box / Pouch", minOrder: "25 kg" },
+      { id: "JAG-ORG", name: "Organic Jaggery Powder", weight: "250g / 500g / 1kg", packaging: "Pouch / Jar", minOrder: "25 kg" },
     ],
   },
 ];

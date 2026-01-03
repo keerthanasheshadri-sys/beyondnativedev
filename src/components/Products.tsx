@@ -11,7 +11,8 @@ import productMoringa from "@/assets/product-moringa.jpg";
 import productTurmeric from "@/assets/product-turmeric.jpg";
 import productPepper from "@/assets/product-pepper.jpg";
 import productGinger from "@/assets/product-ginger.jpg";
-import productMockup from "@/assets/product-mockup.jpg";
+import productHoney from "@/assets/product-honey.jpg";
+import productJaggery from "@/assets/product-jaggery.jpg";
 
 interface SKU {
   id: string;
@@ -30,7 +31,7 @@ interface Product {
     title: string;
     description: string;
   }[];
-  youtubeVideoId: string;
+  youtubeVideoId?: string;
   icon: React.ComponentType<{ className?: string }>;
   origin: string;
   shelfLife: string;
@@ -133,7 +134,7 @@ const products: Product[] = [
   {
     name: "Honey",
     description: "Pure, raw honey sourced from wild forests and organic farms. Rich in enzymes, antioxidants, and natural sweetness.",
-    image: productMockup,
+    image: productHoney,
     benefits: ["Natural Sweetener", "Rich in Antioxidants", "Antibacterial"],
     healthBenefits: [
       { title: "Natural Energy Source", description: "Provides quick, natural energy through easily digestible natural sugars like fructose and glucose without causing sugar spikes." },
@@ -142,7 +143,6 @@ const products: Product[] = [
       { title: "Soothes Coughs & Sore Throat", description: "Clinically proven to be as effective as some cough medicines, coating the throat and providing natural relief." },
       { title: "Supports Digestive Health", description: "Prebiotic properties feed beneficial gut bacteria, supporting a healthy digestive system and immune function." },
     ],
-    youtubeVideoId: "n0SLWX31U7k",
     icon: Droplet,
     origin: "Various Regions, India",
     shelfLife: "24 months",
@@ -156,7 +156,7 @@ const products: Product[] = [
   {
     name: "Jaggery",
     description: "Traditional unrefined cane sugar, rich in minerals and natural sweetness. A healthier alternative to refined sugar.",
-    image: productMockup,
+    image: productJaggery,
     benefits: ["Mineral Rich", "Natural Sweetener", "Detoxifying"],
     healthBenefits: [
       { title: "Rich in Essential Minerals", description: "Contains iron, magnesium, potassium, and phosphorus that are stripped away in refined sugar production." },
@@ -165,7 +165,6 @@ const products: Product[] = [
       { title: "Boosts Immunity", description: "Rich in antioxidants and minerals like zinc and selenium that strengthen the immune system." },
       { title: "Provides Sustained Energy", description: "Complex carbohydrates are digested slowly, providing sustained energy without the crash associated with refined sugar." },
     ],
-    youtubeVideoId: "n0SLWX31U7k",
     icon: Cookie,
     origin: "Maharashtra & Tamil Nadu, India",
     shelfLife: "12 months",
@@ -326,23 +325,25 @@ const Products = () => {
               </div>
 
               {/* YouTube Video Section */}
-              <div className="mt-8">
-                <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
-                  Learn More About {selectedProduct.name}
-                </h4>
-                <div className="aspect-video rounded-xl overflow-hidden bg-secondary/50">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube-nocookie.com/embed/${selectedProduct.youtubeVideoId}?rel=0&modestbranding=1`}
-                    title={`${selectedProduct.name} video`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
+              {selectedProduct.youtubeVideoId && (
+                <div className="mt-8">
+                  <h4 className="font-serif text-xl font-semibold text-foreground mb-4">
+                    Learn More About {selectedProduct.name}
+                  </h4>
+                  <div className="aspect-video rounded-xl overflow-hidden bg-secondary/50">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube-nocookie.com/embed/${selectedProduct.youtubeVideoId}?rel=0&modestbranding=1`}
+                      title={`${selectedProduct.name} video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* SKUs Section */}
               <div className="mt-8">

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send, Check } from "lucide-react";
+import { Mail, MapPin, Send, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -58,18 +58,6 @@ const Contact = () => {
                     <h4 className="font-semibold text-foreground mb-1">Email Us</h4>
                     <a href="mailto:hello@beyondnative.in" className="text-accent hover:underline">
                       hello@beyondnative.in
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 rounded-lg p-3">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Call Us</h4>
-                    <a href="tel:+919876543210" className="text-muted-foreground">
-                      +91 98765 43210
                     </a>
                   </div>
                 </div>

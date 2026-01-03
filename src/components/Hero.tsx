@@ -20,16 +20,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-6 py-2 mb-8 animate-fade-up">
-          <Leaf className="h-4 w-4 text-primary-foreground" />
-          <span className="text-sm font-medium text-primary-foreground">
-            Premium Indian Agricultural Exports
-          </span>
-        </div>
-
         {/* Heading */}
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
           India's Goodness,
           <br />
           <span className="text-accent">Shared With the World</span>

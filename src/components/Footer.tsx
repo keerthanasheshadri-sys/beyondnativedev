@@ -52,22 +52,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Products */}
-          <div>
-            <h4 className="font-serif text-lg font-bold mb-6">Our Products</h4>
-            <ul className="space-y-3">
-              {["Moringa Powder", "Turmeric Powder", "Arrowroot Powder", "Black Pepper", "Ginger", "Ashwagandha"].map((product) => (
-                <li key={product}>
-                  <a
-                    href="#products"
-                    className="text-primary-foreground/70 hover:text-accent transition-colors"
-                  >
-                    {product}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact */}
           <div>

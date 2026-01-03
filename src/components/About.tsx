@@ -95,9 +95,9 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { number: "25+", label: "Countries" },
-                { number: "500+", label: "Tons Exported" },
-                { number: "100+", label: "Happy Clients" },
+                { number: "5+", label: "Countries" },
+                { number: "300+", label: "Tons Exported" },
+                { number: "1000+", label: "Happy Clients" },
               ].map((stat) => (
                 <div
                   key={stat.label}

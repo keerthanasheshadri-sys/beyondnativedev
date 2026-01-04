@@ -1,20 +1,11 @@
 import { ArrowRight, Leaf, Globe, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
-  return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with 40% Black Tint Overlay */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Organic farm fields"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroBg} alt="Organic farm fields" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
@@ -28,47 +19,45 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle - Clean Sans-Serif */}
-        <p className="font-sans text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          Beyond Native brings you premium moringa, turmeric, and organic superfoods—sourced 
-          from India's heartland and exported to discerning buyers worldwide.
-        </p>
+        <p className="font-sans text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-fade-up" style={{
+        animationDelay: "0.2s"
+      }}>Beyond Native brings you premium moringa, turmeric, and organic foods sourced from India's heartland and exported to discerning buyers worldwide.</p>
 
         {/* CTA Buttons with hover lift effect */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          <Button 
-            variant="hero" 
-            size="xl" 
-            className="group"
-            onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-up" style={{
+        animationDelay: "0.3s"
+      }}>
+          <Button variant="hero" size="xl" className="group" onClick={() => document.getElementById('products')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             Explore Products
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button 
-            variant="heroOutline" 
-            size="xl"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contact')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             <Globe className="h-5 w-5" />
             Contact Us
           </Button>
         </div>
 
         {/* Trust Badges - Pure White Icons, Larger Size */}
-        <div className="flex flex-wrap justify-center gap-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-          {[
-            { icon: Leaf, text: "100% Natural" },
-            { icon: Award, text: "Premium Quality" },
-            { icon: Globe, text: "Global Standards" },
-          ].map((badge, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 text-white"
-            >
+        <div className="flex flex-wrap justify-center gap-8 animate-fade-up" style={{
+        animationDelay: "0.4s"
+      }}>
+          {[{
+          icon: Leaf,
+          text: "100% Natural"
+        }, {
+          icon: Award,
+          text: "Premium Quality"
+        }, {
+          icon: Globe,
+          text: "Global Standards"
+        }].map((badge, index) => <div key={index} className="flex items-center gap-3 text-white">
               <badge.icon className="h-6 w-6 text-white" />
               <span className="text-base font-medium">{badge.text}</span>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
@@ -78,8 +67,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;

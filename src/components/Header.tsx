@@ -51,7 +51,7 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`font-medium transition-colors duration-300 hover:text-accent ${
+              className={`font-sans font-medium transition-colors duration-300 hover:text-accent ${
                 isScrolled ? "text-foreground" : "text-primary-foreground"
               }`}
             >
@@ -84,7 +84,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-medium text-foreground hover:text-accent py-2"
+                className="font-sans font-medium text-foreground hover:text-accent py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}

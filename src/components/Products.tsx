@@ -185,13 +185,13 @@ const Products = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-medium uppercase tracking-wider text-sm">
+          <span className="font-sans text-accent font-medium uppercase tracking-wider text-sm">
             Our Products
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
             Premium Organic Products
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="font-sans text-muted-foreground text-lg">
             Handpicked from India's finest farms, processed with care, and exported with excellence.
           </p>
         </div>
@@ -222,7 +222,7 @@ const Products = () => {
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
                   {product.name}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">
+                <p className="font-sans text-muted-foreground mb-4 line-clamp-2">
                   {product.description}
                 </p>
                 
@@ -231,7 +231,7 @@ const Products = () => {
                   {product.benefits.map((benefit) => (
                     <span
                       key={benefit}
-                      className="text-xs font-medium bg-secondary text-secondary-foreground px-3 py-1 rounded-full"
+                      className="font-sans text-xs font-medium bg-secondary text-secondary-foreground px-3 py-1 rounded-full"
                     >
                       {benefit}
                     </span>

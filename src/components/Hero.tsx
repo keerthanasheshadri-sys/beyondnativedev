@@ -45,9 +45,9 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center gap-8 animate-fade-up" style={{
         animationDelay: "0.4s"
       }}>
-          {[{
+        {[{
           icon: Leaf,
-          text: "100% Natural"
+          text: "Responsibly sourced"
         }, {
           icon: Award,
           text: "Premium Quality"

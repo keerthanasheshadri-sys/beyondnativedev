@@ -19,9 +19,9 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle - Clean Sans-Serif */}
-        <p className="font-sans text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-fade-up" style={{
+        <p style={{
         animationDelay: "0.2s"
-      }}>Beyond Native brings you premium moringa, turmeric, and organic foods sourced from India's heartland and exported to discerning buyers worldwide.</p>
+      }} className="font-sans text-lg text-white/90 max-w-2xl mx-auto mb-10 animate-fade-up md:text-lg">Beyond Native works with producers across India to build reliable, traceable supply chains that meet international quality and export standards.</p>
 
         {/* CTA Buttons with hover lift effect */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-up" style={{

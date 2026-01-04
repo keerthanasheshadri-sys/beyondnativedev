@@ -8,32 +8,32 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image with Overlay */}
+      {/* Background Image with 40% Black Tint Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
           alt="Organic farm fields"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/85 via-forest/75 to-forest/90" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32 text-center">
-        {/* Heading */}
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
+        {/* Heading - Pure White */}
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-up">
           India's Goodness,
           <br />
-          <span className="text-accent">Shared With the World</span>
+          <span className="text-golden">Shared With the World</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        {/* Subtitle - Clean Sans-Serif */}
+        <p className="font-sans text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           Beyond Native brings you premium moringa, turmeric, and organic superfoods—sourced 
           from India's heartland and exported to discerning buyers worldwide.
         </p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons with hover lift effect */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <Button 
             variant="hero" 
@@ -54,7 +54,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Trust Badges */}
+        {/* Trust Badges - Pure White Icons, Larger Size */}
         <div className="flex flex-wrap justify-center gap-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
           {[
             { icon: Leaf, text: "100% Natural" },
@@ -63,10 +63,10 @@ const Hero = () => {
           ].map((badge, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 text-primary-foreground/80"
+              className="flex items-center gap-3 text-white"
             >
-              <badge.icon className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium">{badge.text}</span>
+              <badge.icon className="h-6 w-6 text-white" />
+              <span className="text-base font-medium">{badge.text}</span>
             </div>
           ))}
         </div>
@@ -74,8 +74,8 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full animate-pulse" />
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse" />
         </div>
       </div>
     </section>

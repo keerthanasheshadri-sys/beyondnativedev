@@ -20,13 +20,13 @@ const Quality = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-medium uppercase tracking-wider text-sm">
+          <span className="font-sans text-accent font-medium uppercase tracking-wider text-sm">
             Quality Assurance
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
             Excellence from Farm to Export
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="font-sans text-muted-foreground text-lg">
             We maintain the highest standards from farm to export, ensuring every shipment meets global quality benchmarks.
           </p>
         </div>
@@ -44,7 +44,7 @@ const Quality = () => {
               <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                 {cert.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="font-sans text-muted-foreground text-sm">
                 {cert.description}
               </p>
             </div>
@@ -71,8 +71,8 @@ const Quality = () => {
                     <item.icon className="h-10 w-10" />
                   </div>
                   
-                  <h4 className="font-semibold text-lg mb-2">{item.title}</h4>
-                  <p className="text-primary-foreground/80 text-sm">
+                  <h4 className="font-sans font-semibold text-lg mb-2">{item.title}</h4>
+                  <p className="font-sans text-primary-foreground/80 text-sm">
                     {item.description}
                   </p>
                 </div>

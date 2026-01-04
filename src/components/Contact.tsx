@@ -30,13 +30,13 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-medium uppercase tracking-wider text-sm">
+          <span className="font-sans text-accent font-medium uppercase tracking-wider text-sm">
             Get in Touch
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
             Let's Connect
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="font-sans text-muted-foreground text-lg">
             Ready to experience premium quality? Reach out to us and let's discuss how we can serve your needs.
           </p>
         </div>
@@ -55,8 +55,8 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Email Us</h4>
-                    <a href="mailto:hello@beyondnative.in" className="text-accent hover:underline">
+                    <h4 className="font-sans font-semibold text-foreground mb-1">Email Us</h4>
+                    <a href="mailto:hello@beyondnative.in" className="font-sans text-accent hover:underline">
                       hello@beyondnative.in
                     </a>
                   </div>
@@ -67,8 +67,8 @@ const Contact = () => {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Location</h4>
-                    <p className="text-muted-foreground">India</p>
+                    <h4 className="font-sans font-semibold text-foreground mb-1">Location</h4>
+                    <p className="font-sans text-muted-foreground">India</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                     <div className="bg-accent rounded-full p-1">
                       <Check className="h-3 w-3 text-accent-foreground" />
                     </div>
-                    <span className="text-sm">{benefit}</span>
+                    <span className="font-sans text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -101,27 +101,27 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block font-sans text-sm font-medium text-foreground mb-2">
                     Your Name
                   </label>
                   <input
                     type="text"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full font-sans px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     placeholder="John Doe"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block font-sans text-sm font-medium text-foreground mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full font-sans px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     placeholder="john@company.com"
                     required
                   />
@@ -129,27 +129,27 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block font-sans text-sm font-medium text-foreground mb-2">
                   Company Name
                 </label>
                 <input
                   type="text"
                   value={formState.company}
                   onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  className="w-full font-sans px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder="Your Company"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block font-sans text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
                 <textarea
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                  className="w-full font-sans px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
                   placeholder="Tell us about your requirements..."
                   required
                 />

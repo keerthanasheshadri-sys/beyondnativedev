@@ -25,7 +25,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <span className="text-accent font-medium uppercase tracking-wider text-sm">
+            <span className="font-sans text-accent font-medium uppercase tracking-wider text-sm">
               Our Story
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-8">
@@ -34,7 +34,7 @@ const About = () => {
               <span className="text-primary">Growing Globally</span>
             </h2>
             
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-6 font-sans text-muted-foreground text-lg leading-relaxed">
               <p>
                 We're a group of tech minds, logistics experts, and everyday dreamers who believe 
                 India's richest treasures aren't just found in markets, they're grown in our soil.
@@ -66,7 +66,7 @@ const About = () => {
                   At Our Core
                 </h3>
               </div>
-              <p className="text-muted-foreground text-lg mb-8">
+              <p className="font-sans text-muted-foreground text-lg mb-8">
                 We stand for three things that guide everything we do:
               </p>
               
@@ -80,10 +80,10 @@ const About = () => {
                       <value.icon className="h-5 w-5 text-accent" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
+                      <h4 className="font-sans font-semibold text-foreground mb-1">
                         {value.title}
                       </h4>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="font-sans text-muted-foreground text-sm">
                         {value.description}
                       </p>
                     </div>
@@ -106,7 +106,7 @@ const About = () => {
                   <div className="font-serif text-3xl font-bold mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-primary-foreground/80">
+                  <div className="font-sans text-sm text-primary-foreground/80">
                     {stat.label}
                   </div>
                 </div>

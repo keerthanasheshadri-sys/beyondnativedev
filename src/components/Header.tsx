@@ -58,7 +58,7 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <Button variant={isScrolled ? "default" : "hero"} size="lg">
+          <Button variant={isScrolled ? "default" : "hero"} size="lg" className="bg-[#CC6133] text-white hover:bg-[#CC6133]/90">
             Get in Touch
           </Button>
         </nav>
@@ -90,7 +90,7 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="default" size="lg" className="mt-2">
+            <Button variant="default" size="lg" className="mt-2 bg-[#CC6133] text-white hover:bg-[#CC6133]/90">
               Get in Touch
             </Button>
           </nav>

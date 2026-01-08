@@ -383,7 +383,16 @@ const Products = () => {
                 <Button 
                   className="w-full mt-6" 
                   variant="accent"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    // Close the product dialog first
+                    setSelectedProduct(null);
+                    // Then smoothly scroll to the contact section
+                    setTimeout(() => {
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }, 250);
+                  }}
                 >
                   Request Quote for {selectedProduct.name}
                 </Button>

@@ -15,7 +15,7 @@ const Hero = () => {
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-up">
           India's Goodness,
           <br />
-          <span className="text-golden">Shared With the World</span>
+          <span className="text-white">Shared With the World</span>
         </h1>
 
         {/* Subtitle - Clean Sans-Serif */}
@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-up" style={{
         animationDelay: "0.3s"
       }}>
-          <Button variant="hero" size="xl" className="group" onClick={() => document.getElementById('products')?.scrollIntoView({
+          <Button variant="hero" size="xl" className="group bg-[#CC6133] text-white hover:bg-[#CC6133]/90" onClick={() => document.getElementById('products')?.scrollIntoView({
           behavior: 'smooth'
         })}>
             Explore Products
